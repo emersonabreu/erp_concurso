@@ -5,6 +5,8 @@ import { Toaster } from "sonner";
 import AppLayout from "@/components/layout/AppLayout";
 import Cadastros from "@/pages/Cadastros";
 import Dashboard from "@/pages/Dashboard";
+import Editais from "@/pages/Editais";
+import Disciplinas from "@/pages/Disciplinas";
 // Importe outras páginas aqui conforme forem criadas (ex: Dashboard, Editais, etc.)
 
 const queryClient = new QueryClient();
@@ -26,6 +28,8 @@ function App() {
           <Route element={<AppLayout />}>
             <Route path="/" element={<Dashboard />} />
             <Route path="/cadastros" element={<Cadastros />} />
+            <Route path="/editais" element={<Editais />} />
+<Route path="/disciplinas" element={<Disciplinas />} />
             {/* Adicione outras rotas conforme forem criadas */}
             <Route path="/editais" element={<PlaceholderPage title="Editais" />} />
             <Route path="/questoes" element={<PlaceholderPage title="Questões" />} />
