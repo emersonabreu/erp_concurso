@@ -50,13 +50,53 @@
     }
   ],
   "simulados": [],
-  "respostas": [],
-  "revisoes": [],
+  "respostas": [  {
+    "id": "resp1",
+    "id_simulado": "modo_estudo",
+    "id_questao": "1",
+    "letra_respondida": "A",
+    "correta": true,
+    "tempo_resposta_seg": 5,
+    "id_disciplina": "1",
+    "created_date": "2024-06-10T10:00:00.000Z"
+  },
+  {
+    "id": "resp2",
+    "id_simulado": "modo_estudo",
+    "id_questao": "1",
+    "letra_respondida": "B",
+    "correta": false,
+    "tempo_resposta_seg": 8,
+    "id_disciplina": "1",
+    "created_date": "2024-06-11T12:00:00.000Z"
+  }],
+  "revisoes": [  {
+    "id": "rev1",
+    "id_questao": "1",
+    "caixa": 1,
+    "proxima_revisao": "2024-06-12",
+    "ultima_revisao": "2024-06-10",
+    "total_acertos": 1,
+    "total_erros": 0
+  }],
   "pontuacoes": [],
-  "metas": [],
+  "metas": [  {
+    "id": "meta1",
+    "semana_inicio": "2024-06-10",
+    "semana_fim": "2024-06-16",
+    "meta_questoes": 50,
+    "meta_simulados": 2,
+    "meta_revisoes": 30,
+    "questoes_resolvidas": 15,
+    "simulados_feitos": 0,
+    "revisoes_feitas": 5,
+    "observacao": ""
+  }],
   "cronogramas": [],
   "itens_cronograma": [],
   "users": [
     { "id": "user1", "email": "teste@teste.com", "password": "123456", "full_name": "Usuário Teste", "created_date": "2024-01-01T00:00:00.000Z" }
   ]
+
+  
 }

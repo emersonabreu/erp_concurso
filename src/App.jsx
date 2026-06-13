@@ -24,7 +24,7 @@ function App() {
         <Routes>
           {/* Rotas protegidas com layout */}
           <Route element={<AppLayout />}>
-            <Route path="/" element={<PlaceholderPage title="Dashboard" />} />
+            <Route path="/" element={<Dashboard />} />
             <Route path="/cadastros" element={<Cadastros />} />
             {/* Adicione outras rotas conforme forem criadas */}
             <Route path="/editais" element={<PlaceholderPage title="Editais" />} />
