@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
 import AppLayout from "@/components/layout/AppLayout";
 import Cadastros from "@/pages/Cadastros";
+import Dashboard from "@/pages/Dashboard";
 // Importe outras páginas aqui conforme forem criadas (ex: Dashboard, Editais, etc.)
 
 const queryClient = new QueryClient();
