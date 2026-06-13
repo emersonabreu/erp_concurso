@@ -1,17 +1,94 @@
-# React + Vite
+ETAPA 1 DE 10: Criar o projeto base e instalar dependências
+Passo 1: Criar o projeto React com Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+No terminal, execute:
+bash
 
-Currently, two official plugins are available:
+npm create vite@latest concurso-pro -- --template react
+cd concurso-pro
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Passo 2: Instalar as dependências iniciais
+bash
 
-## React Compiler
+npm install react-router-dom @tanstack/react-query framer-motion lucide-react
+npm install -D tailwindcss@3 postcss autoprefixer concurrently json-server
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Passo 3: Inicializar Tailwind CSS
+bash
 
-## Expanding the ESLint configuration
+npx tailwindcss init -p
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# erp_concurso
+Isso cria tailwind.config.js e postcss.config.js na raiz.
+Passo 4: Configurar o package.json manualmente
+
+Abra o package.json no VS Code. Ele deve estar mais ou menos assim:
+json
+
+{
+  "name": "concurso-pro",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": { ... },
+  "devDependencies": { ... }
+}
+
+Adicione as seguintes linhas dentro de "scripts":
+json
+
+"api": "json-server --watch db.json --port 3001",
+"start": "concurrently \"npm run api\" \"npm run dev\""
+
+O trecho deve ficar assim:
+json
+
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "api": "json-server --watch db.json --port 3001",
+  "start": "concurrently \"npm run api\" \"npm run dev\""
+}
+
+Passo 5: Criar o arquivo db.json (API fake)
+
+Na raiz do projeto (mesma pasta do package.json), crie um arquivo db.json com o seguinte conteúdo:
+json
+
+{
+  "orgaos": [],
+  "bancas": []
+}
+
+✅ Testes (você executa e confirma)
+
+    Teste o React:
+    bash
+
+    npm run dev
+
+    Deve abrir a página padrão do Vite em http://localhost:5173.
+    Pare com Ctrl+C
+
+    Teste a API fake:
+    bash
+
+    npm run api
+
+    Deve mostrar json-server started on port 3001.
+    Pare com Ctrl+C
+
+    Teste os dois juntos:
+    bash
+
+    npm run start
+
+    Os dois servidores devem subir simultaneamente. Acesse http://localhost:3001/orgaos e veja [].
+    Pare com Ctrl+C
+
+📦 Commit
